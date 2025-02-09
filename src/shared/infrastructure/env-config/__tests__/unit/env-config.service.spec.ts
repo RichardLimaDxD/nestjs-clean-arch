@@ -3,7 +3,7 @@ import { EnvConfigService } from '../../env-config.service';
 import { ConfigService } from '@nestjs/config';
 import { EnvConfigModule } from '../../env-config.module';
 
-describe('EnvConfigService unit tests', () => {
+describe('Env config service unit tests', () => {
   let sut: EnvConfigService;
 
   beforeEach(async () => {
