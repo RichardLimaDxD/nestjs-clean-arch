@@ -22,7 +22,7 @@ describe('User validator - unit tests', () => {
     });
   });
 
-  describe('Name field - errors', () => {
+  describe('Validators user entity fields class - errors', () => {
     it('Invalidation cases for name field', () => {
       let isValid = sut.validate(null as any);
 
@@ -53,9 +53,7 @@ describe('User validator - unit tests', () => {
         'name must be shorter than or equal to 255 characters',
       ]);
     });
-  });
 
-  describe('E-mail field - errors', () => {
     it('Invalidation cases for email field', () => {
       let isValid = sut.validate(null as any);
 
@@ -92,9 +90,7 @@ describe('User validator - unit tests', () => {
         'email must be shorter than or equal to 255 characters',
       ]);
     });
-  });
 
-  describe('Password field - errors', () => {
     it('Invalidation cases for password field', () => {
       let isValid = sut.validate(null as any);
 
@@ -127,9 +123,7 @@ describe('User validator - unit tests', () => {
         'password must be shorter than or equal to 100 characters',
       ]);
     });
-  });
 
-  describe('CreatedAt field - errors', () => {
     it('Invalidation cases for createdAt field', () => {
       const props = UserDataBuilder({});
       let isValid = sut.validate({ ...props, createdAt: 10 as any });
