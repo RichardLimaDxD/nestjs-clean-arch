@@ -4,6 +4,15 @@ import { EntityValidationError } from '@/shared/domain/errors/validation-error';
 
 describe('User entity integration tests', () => {
   describe('Constructor method', () => {
+    it('Should a valid user', () => {
+      expect.assertions(0);
+
+      const props: UserProps = {
+        ...UserDataBuilder({}),
+      };
+      new UserEntity(props);
+    });
+
     it('Should throw an error when creating a user with invalid name', () => {
       let props: UserProps = {
         ...UserDataBuilder({}),
