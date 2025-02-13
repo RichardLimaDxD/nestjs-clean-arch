@@ -34,6 +34,14 @@ describe('In memory repository unit tests', () => {
     expect(entity.toJSON()).toStrictEqual(result.toJSON());
   });
 
+  it('Should returns all entities', async () => {
+    const entity = new StubEntity({ name: 'test name', price: 50 });
+    await sut.insert(entity);
+
+    const result = await sut.findAll();
+    expect([entity]).toStrictEqual(result);
+  });
+
   it('Should throw error when entity not found', async () => {
     await expect(sut.findById('fakeId')).rejects.toThrow(
       new NotFoundError('Entity not found'),
